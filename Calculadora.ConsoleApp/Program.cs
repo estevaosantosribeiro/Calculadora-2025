@@ -13,6 +13,8 @@
 
                 Console.WriteLine("1 - Somar");
                 Console.WriteLine("2 - Subtrair");
+                Console.WriteLine("3 - Multiplicação");
+                Console.WriteLine("4 - Divisão");
                 Console.WriteLine("S - Sair");
 
                 Console.Write("Escolha uma opção: ");
@@ -28,7 +30,7 @@
 
                 Console.Write("Digite o segundo número: ");
                 string segundoNumeroString = Console.ReadLine();
-                decimal segundoNumero = Convert.ToInt32(segundoNumeroString);
+                decimal segundoNumero = Convert.ToDecimal(segundoNumeroString);
 
                 decimal resultado = 0;
 
@@ -40,9 +42,23 @@
                 {
                     resultado = primeiroNumero - segundoNumero;
                 }
+                else if (opcao == "3")
+                {
+                    resultado = primeiroNumero * segundoNumero;
+                }
+                else if (opcao == "4")
+                {
+                    while(segundoNumero == 0)
+                    {
+                        Console.WriteLine("Não é possível dividir um número por zero.");
+                        segundoNumero = Convert.ToDecimal(Console.ReadLine());
+                    }
+
+                    resultado = primeiroNumero / segundoNumero;
+                }
 
                 Console.WriteLine("--------------------------------");
-                Console.WriteLine("Resultado: " + resultado);
+                Console.WriteLine("Resultado: " + resultado.ToString("F2"));
                 Console.WriteLine("--------------------------------");
 
                 Console.WriteLine("Deseja continuar? (S/N): ");
