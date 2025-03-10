@@ -15,6 +15,7 @@
                 Console.WriteLine("2 - Subtrair");
                 Console.WriteLine("3 - Multiplicação");
                 Console.WriteLine("4 - Divisão");
+                Console.WriteLine("5 - Tabuada");
                 Console.WriteLine("S - Sair");
 
                 Console.Write("Escolha uma opção: ");
@@ -23,6 +24,26 @@
 
                 if (opcao == "S")
                     break;
+                else if (opcao == "5")
+                {
+                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine("Tabuada");
+                    Console.WriteLine("--------------------------------\n");
+
+                    Console.Write("Digite o número: ");
+                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
+
+                    for (int contador = 1; contador <= 10; contador++)
+                    {
+                        int resultadoTabuada = numeroTabuada * contador;
+
+                        Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}");
+                    }
+
+                    Console.ReadLine();
+
+                    continue;
+                }
 
                 Console.Write("Digite o primeiro número: ");
                 string primeiroNumeroString = Console.ReadLine();
@@ -50,14 +71,19 @@
                 {
                     while(segundoNumero == 0)
                     {
-                        Console.WriteLine("Não é possível dividir um número por zero.");
+                        Console.WriteLine("Não é possível dividir um número por zero.\n");
+                        Console.Write("Digite o segundo número novamente: ");
                         segundoNumero = Convert.ToDecimal(Console.ReadLine());
                     }
 
                     resultado = primeiroNumero / segundoNumero;
                 }
+                else if (opcao == "5")
+                {
 
-                Console.WriteLine("--------------------------------");
+                }
+
+                    Console.WriteLine("--------------------------------");
                 Console.WriteLine("Resultado: " + resultado.ToString("F2"));
                 Console.WriteLine("--------------------------------");
 
