@@ -119,7 +119,6 @@
                 if (opcaoContinuar != "S")
                     break;
 
-                Console.ReadLine();
             }
         }
     }
